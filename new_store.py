@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,render_template
 
 # create an app for the flask
 app = Flask(__name__)  # __name__ is a special name variable . Flask object with unique name
@@ -13,7 +13,9 @@ stores = [
         ]
     }
 ]
-
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # server's perspective
 # POST to receive data
